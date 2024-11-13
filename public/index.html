@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Challenge - The Ultimate Social Media Game Trend | EmojiChallenge.org</title>
+    <meta name="description" content="Discover the viral Emoji Challenge trend! Learn how to play this exciting social media game that combines creativity, acting, and fun across TikTok, Instagram, and more.">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --dark: #2C3E50;
+            --light: #F7F9FC;
+            --accent: #FFE66D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo img {
+            margin-right: 8px;
+        }
+
+        .hero {
+            position: relative;
+            padding: 120px 0 60px;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            z-index: 0;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:url('./bg-emojis.webp');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .hero h1, .hero p, .hero a {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-child(even) {
+            background-color: white;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--dark);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .platforms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .platform-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .platform-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .rules {
+            background-color: var(--light);
+        }
+
+        .rule-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .rule-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .rule-list li::before {
+            content: "👉";
+            position: absolute;
+            left: 0;
+        }
+
+        .cta {
+            text-align: center;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--accent);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .features, .platforms {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .example-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .example-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .emoji-list {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            letter-spacing: 0.5rem;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        .rules-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .rules-column {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .detailed-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detailed-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .detailed-list li::before {
+            content: "✓";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+
+        .rules-extended {
+            background-color: var(--light);
+        }
+
+        @media (max-width: 768px) {
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .rules-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-icon {
+font-size: 2.5rem;
+margin: 1rem 0;
+}
+.feature-list {
+list-style: none;
+padding: 0;
+margin-top: 1rem;
+}
+.feature-list li {
+padding-left: 1.5rem;
+position: relative;
+margin-bottom: 0.5rem;
+}
+.feature-list li::before {
+content: "•";
+color: var(--primary);
+position: absolute;
+left: 0;
+}
+.gameplay-types {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+margin-top: 3rem;
+}
+.gameplay-card {
+background: white;
+padding: 2rem;
+border-radius: 10px;
+box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.gameplay-icon {
+font-size: 2.5rem;
+margin: 1rem 0;
+}
+.steps-list {
+margin-top: 1.5rem;
+}
+.step {
+display: flex;
+align-items: flex-start;
+margin-bottom: 1rem;
+}
+.step-number {
+background: var(--primary);
+color: white;
+width: 24px;
+height: 24px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 1rem;
+flex-shrink: 0;
+}
+.platform-features {
+list-style: none;
+padding: 0;
+margin-top: 1rem;
+}
+.platform-features li {
+padding-left: 1.5rem;
+position: relative;
+margin-bottom: 0.5rem;
+}
+.platform-features li::before {
+content: "→";
+color: var(--primary);
+position: absolute;
+left: 0;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="./logo.png" alt="EmojiChallenge.org" width="40" height="40" />
+                EmojiChallenge.org
+            </div>
+            <nav>
+                <a href="#about" class="btn">Learn More</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to the Emoji Challenge</h1>
+            <p>Join millions in the most exciting social media trend that combines creativity, acting, and fun! Express yourself through emojis and showcase your emotional range.</p>
+            <a href="#how-to-play" class="btn">Start Playing</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>What is the Emoji Challenge?</h2>
+            <p class="section-intro">The Emoji Challenge is a viral social media phenomenon that combines creativity, acting skills, and emotional expression through emoji interpretations. Since its explosion on TikTok in late July 2022, it has evolved into multiple formats and spread across various social platforms.</p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Social Media Trend</h3>
+                    <div class="feature-icon">🌟</div>
+                    <p>The Emoji Challenge gained massive popularity on TikTok, where users create engaging videos by acting out emotions represented by different emojis. Videos typically feature overlay text with emoji combinations, and creators must act out or repeat specific phrases matching the emotions shown.</p>
+                    <ul class="feature-list">
+                        <li>Viral social media trend</li>
+                        <li>Creative emoji interpretations</li>
+                        <li>Millions of participants worldwide</li>
+                        <li>Constantly evolving formats</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Creative Expression</h3>
+                    <div class="feature-icon">🎭</div>
+                    <p>Participants showcase their acting abilities and emotional range through unique interpretations. The challenge encourages creativity and humor, allowing users to add their personal style to performances.</p>
+                    <ul class="feature-list">
+                        <li>Acting skill showcase</li>
+                        <li>Emotional range display</li>
+                        <li>Personal style integration</li>
+                        <li>Creative storytelling</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Community Engagement</h3>
+                    <div class="feature-icon">🤝</div>
+                    <p>The challenge creates a vibrant community where users can share performances, compete with friends, and engage with fellow emoji enthusiasts. Participants can earn karma, badges, and recognition for their creative contributions.</p>
+                    <ul class="feature-list">
+                        <li>Global community participation</li>
+                        <li>Friendly competition</li>
+                        <li>Social interaction</li>
+                        <li>Recognition and rewards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-to-play" class="rules">
+        <div class="container">
+            <h2>How to Play the Emoji Challenge</h2>
+            <p class="section-intro">The Emoji Challenge offers multiple ways to play, from social media performances to memory games. Choose your preferred format and start expressing yourself!</p>
+            
+            <div class="gameplay-types">
+                <div class="gameplay-card">
+                    <h3>Social Media Version</h3>
+                    <div class="gameplay-icon">📱</div>
+                    <div class="steps-list">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <p>Choose your platform (TikTok, Instagram, etc.)</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <p>Select emoji combinations for your performance</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <p>Record your creative interpretation</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">4</span>
+                            <p>Add music and effects to enhance your video</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">5</span>
+                            <p>Share and engage with the community</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gameplay-card">
+                    <h3>Memory Game Version</h3>
+                    <div class="gameplay-icon">🎮</div>
+                    <div class="steps-list">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <p>Print or prepare digital emoji cards</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <p>Create an 8x5 grid of face-down cards</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <p>Use one hand to find matching pairs</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">4</span>
+                            <p>Track your time for competition</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">5</span>
+                            <p>Challenge friends to beat your score</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="platforms">
+        <div class="container">
+            <h2>Popular Platforms for Emoji Challenge</h2>
+            <p class="section-intro">The Emoji Challenge has found its home across various social media platforms, each offering unique features and communities.</p>
+            
+            <div class="platforms">
+                <div class="platform-card">
+                    <div class="platform-icon">📱</div>
+                    <h3>TikTok</h3>
+                    <p>The birthplace of the viral trend, TikTok offers:</p>
+                    <ul class="platform-features">
+                        <li>Built-in music library</li>
+                        <li>Easy video editing tools</li>
+                        <li>Huge emoji challenge community</li>
+                        <li>Trending hashtags and sounds</li>
+                        <li>Duet and reaction features</li>
+                    </ul>
+                </div>
+                
+                <div class="platform-card">
+                    <div class="platform-icon">📸</div>
+                    <h3>Instagram</h3>
+                    <p>Share your emoji challenges through:</p>
+                    <ul class="platform-features">
+                        <li>Instagram Reels</li>
+                        <li>Stories with emoji stickers</li>
+                        <li>Feed posts with carousels</li>
+                        <li>Live performances</li>
+                        <li>Collaborative challenges</li>
+                    </ul>
+                </div>
+                
+                <div class="platform-card">
+                    <div class="platform-icon">👻</div>
+                    <h3>Snapchat</h3>
+                    <p>Enhance your performances with:</p>
+                    <ul class="platform-features">
+                        <li>AR filters and effects</li>
+                        <li>Quick sharing with friends</li>
+                        <li>Creative camera tools</li>
+                        <li>Private group challenges</li>
+                        <li>Spotlight submissions</li>
+                    </ul>
+                </div>
+                
+                <div class="platform-card">
+                    <div class="platform-icon">��</div>
+                    <h3>WhatsApp</h3>
+                    <p>Connect through emoji challenges via:</p>
+                    <ul class="platform-features">
+                        <li>Status updates</li>
+                        <li>Group challenges</li>
+                        <li>Video messages</li>
+                        <li>Story sharing</li>
+                        <li>Private competitions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="examples">
+        <div class="container">
+            <h2>Popular Emoji Challenge Examples</h2>
+            <p class="section-intro">Check out these creative interpretations from social media stars that made the Emoji Challenge go viral!</p>
+            
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h3>Tati's Southern Farmer Act</h3>
+                    <div class="emoji-list">🤢 👨‍🌾 😂 😤</div>
+                    <p>TikTok creator Tati showcased her impressive acting range by repeating "You stink!" in a Southern farmer's voice, transitioning smoothly between different emotions and leaving viewers amazed with her performance.</p>
+                </div>
+                
+                <div class="example-card">
+                    <h3>Chechin's Stranger Things Reference</h3>
+                    <div class="emoji-list">😠 😺 🗣️</div>
+                    <p>Creator Chechin went viral with his "Chrissy, wake up!" performance, incorporating angry emotions, cat impressions, and even Spanish-speaking elements into his challenge video.</p>
+                </div>
+                
+                <div class="example-card">
+                    <h3>Justin Han's K-Pop Version</h3>
+                    <div class="emoji-list">👦 💃</div>
+                    <p>Adding a K-Pop twist to the challenge, Justin Han collaborated with his little cousin, creating a unique performance that showcased his talent for character transformation.</p>
+                </div>
+                
+                <div class="example-card">
+                    <h3>James Charles' Signature Style</h3>
+                    <div class="emoji-list">👋 😄 😢 😡</div>
+                    <p>Beauty influencer James Charles put his spin on the challenge using his famous "Hi sisters!" catchphrase, demonstrating an impressive range of emotions that earned praise from viewers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="detailed-rules" class="rules-extended">
+        <div class="container">
+            <h2>Detailed Game Rules</h2>
+            
+            <div class="rules-container">
+                <div class="rules-column">
+                    <h3>Online Version Rules</h3>
+                    <ul class="detailed-list">
+                        <li>Watch trending videos to understand current styles and trends</li>
+                        <li>Use the platform's camera features to record your performance</li>
+                        <li>Create unique interpretations of emoji combinations</li>
+                        <li>Add background music to enhance your performance</li>
+                        <li>Share results with friends and join challenges</li>
+                    </ul>
+                </div>
+                
+                <div class="rules-column">
+                    <h3>Physical Card Game Rules</h3>
+                    <ul class="detailed-list">
+                        <li>Print emoji pairs from official PDF templates</li>
+                        <li>Use thick paper to prevent seeing through cards</li>
+                        <li>Arrange cards in an 8x5 grid face-down</li>
+                        <li>Use only one hand for card flipping</li>
+                        <li>Keep your other hand behind your back</li>
+                        <li>Use a timer to track your performance</li>
+                        <li>No external help allowed during gameplay</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Take the Emoji Challenge?</h2>
+            <p>Join millions of players worldwide and show off your emoji acting skills!</p>
+            <a href="#platforms" class="btn">Get Started Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 EmojiChallenge.org - The Ultimate Destination for Emoji Challenge Enthusiasts</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(255,255,255,0.95)';
+            } else {
+                header.style.backgroundColor = 'white';
+            }
+        });
+    </script>
+</body>
+</html> 
