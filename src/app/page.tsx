@@ -251,6 +251,144 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Rules Section */}
+      <section id="rules" className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-8">Game Rules</h2>
+          <p className="text-center max-w-2xl mx-auto mb-12 text-lg">
+            Follow these simple rules to make the most of your Emoji Challenge experience.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="p-8">
+              <h3 className="text-2xl font-bold mb-6">Online Version Rules</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF6B6B]">👉</span>
+                  <span>Watch trending videos to understand current styles and trends</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF6B6B]">👉</span>
+                  <span>Use the platform&apos;s camera features to record your performance</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF6B6B]">👉</span>
+                  <span>Create unique interpretations of emoji combinations</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF6B6B]">👉</span>
+                  <span>Add background music to enhance your performance</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF6B6B]">👉</span>
+                  <span>Share results with friends and join challenges</span>
+                </li>
+              </ul>
+            </Card>
+
+            <Card className="p-8">
+              <h3 className="text-2xl font-bold mb-6">Physical Card Game Rules</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF6B6B]">👉</span>
+                  <span>Print emoji pairs from official PDF templates</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF6B6B]">👉</span>
+                  <span>Use thick paper to prevent seeing through cards</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF6B6B]">👉</span>
+                  <span>Arrange cards in an 8x5 grid face-down</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF6B6B]">👉</span>
+                  <span>Use only one hand for card flipping</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF6B6B]">👉</span>
+                  <span>Keep your other hand behind your back</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF6B6B]">👉</span>
+                  <span>Use a timer to track your performance</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF6B6B]">👉</span>
+                  <span>No external help allowed during gameplay</span>
+                </li>
+              </ul>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Rules Extended Section */}
+      <section id="rules-extended" className="bg-white py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-8">Detailed Game Rules</h2>
+          <p className="text-center max-w-2xl mx-auto mb-12 text-lg">
+            Master the Emoji Challenge with these comprehensive guidelines for both online and physical versions.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-8">
+              <h3 className="text-xl font-bold mb-6">Basic Guidelines</h3>
+              <ul className="space-y-3">
+                {[
+                  "Follow platform-specific guidelines",
+                  "Respect copyright and attribution",
+                  "Keep content family-friendly",
+                  "Use appropriate hashtags",
+                  "Credit original creators"
+                ].map((rule, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <span className="text-[#FF6B6B]">✓</span>
+                    <span>{rule}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+
+            <Card className="p-8">
+              <h3 className="text-xl font-bold mb-6">Performance Tips</h3>
+              <ul className="space-y-3">
+                {[
+                  "Practice facial expressions",
+                  "Use clear lighting",
+                  "Choose appropriate background",
+                  "Time your transitions well",
+                  "Add relevant sound effects"
+                ].map((tip, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <span className="text-[#FF6B6B]">✓</span>
+                    <span>{tip}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+
+            <Card className="p-8">
+              <h3 className="text-xl font-bold mb-6">Community Guidelines</h3>
+              <ul className="space-y-3">
+                {[
+                  "Support fellow creators",
+                  "Provide constructive feedback",
+                  "Join community challenges",
+                  "Share tips and tricks",
+                  "Report inappropriate content"
+                ].map((guideline, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <span className="text-[#FF6B6B]">✓</span>
+                    <span>{guideline}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-[#4ECDC4] to-[#FF6B6B] text-white">
         <div className="container mx-auto px-4 text-center">
