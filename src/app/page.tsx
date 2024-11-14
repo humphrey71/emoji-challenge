@@ -12,7 +12,13 @@ export default function Home() {
             <Image src="/logo.png" alt="EmojiChallenge.org" width={40} height={40} />
             EmojiChallenge.org
           </div>
-          <nav>
+          <nav className="flex items-center gap-4">
+            <a
+              href="/emojikitchen"
+              className="text-[#FF6B6B] hover:text-[#ff8f8f] transition-colors"
+            >
+              Emoji Kitchen
+            </a>
             <Button asChild variant="default">
               <a href="#about">Learn More</a>
             </Button>
