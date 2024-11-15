@@ -1,31 +1,9 @@
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <header className="fixed top-0 w-full bg-white shadow-sm z-50">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2 text-[#FF6B6B] font-bold text-xl">
-            <Image src="/logo.png" alt="EmojiChallenge.org" width={40} height={40} />
-            EmojiChallenge.org
-          </div>
-          <nav className="flex items-center gap-4">
-            <a
-              href="/emojikitchen"
-              className="text-[#FF6B6B] hover:text-[#ff8f8f] transition-colors"
-            >
-              Emoji Kitchen
-            </a>
-            <Button asChild variant="default">
-              <a href="#about">Learn More</a>
-            </Button>
-          </nav>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 text-white text-center">
         <div className="absolute inset-0 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] z-0" />
@@ -405,13 +383,6 @@ export default function Home() {
           </Button>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-[#2C3E50] text-white py-8 text-center">
-        <div className="container mx-auto px-4">
-          <p>&copy; 2024 EmojiChallenge.org - The Ultimate Destination for Emoji Challenge Enthusiasts</p>
-        </div>
-      </footer>
     </div>
   )
 }
