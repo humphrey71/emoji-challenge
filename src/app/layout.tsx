@@ -65,7 +65,16 @@ export default function RootLayout({
         {/* Footer */}
         <footer className="bg-gray-900 text-white py-8 text-center">
           <div className="container mx-auto px-4">
-            <p>&copy; 2024 EmojiChallenge.org - The Ultimate Destination for Emoji Challenge Enthusiasts</p>
+            <p className="text-center mb-4">&copy; 2024 EmojiChallenge.org - The Ultimate Destination for Emoji Challenge Enthusiasts</p>
+            <div className="flex justify-center gap-4 text-sm text-gray-400">
+              <span>Friends:</span>
+              <a href="https://wolfcut.art/" target="_blank" className="hover:text-white transition-colors">
+                WolfCut.Art
+              </a>
+              <a href="https://sitemap.one/" target="_blank" className="hover:text-white transition-colors">
+                Sitemap.One
+              </a>
+            </div>
           </div>
         </footer>
       </body>
